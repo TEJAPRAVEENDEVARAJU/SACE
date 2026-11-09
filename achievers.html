@@ -1,0 +1,1208 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="Explore student achievers and achievement banners from Sandhya Academy of Competitive Exams, SACE Guntur.">
+
+  <meta name="theme-color" content="#142a4a">
+
+  <title>Our Achievers | SACE Academy Guntur</title>
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Our Achievers | SACE Guntur">
+  <meta property="og:description"
+        content="Celebrate student achievements at Sandhya Academy of Competitive Exams, Guntur.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+        rel="stylesheet">
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+>
+
+  <link rel="icon" type="image/x-icon" href="assets/Icon.png">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    /* Achievers page content */
+    .achievers-hero {
+      padding: 76px 0 38px;
+      text-align: center;
+      background: #f8f6f0;
+    }
+
+    .achievers-hero .eyebrow {
+      justify-content: center;
+    }
+
+    .achievers-hero h1 {
+      margin: 14px 0;
+      color: #142a4a;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.15;
+    }
+
+    .achievers-hero h1 em {
+      color: #b58b3b;
+      font-weight: 600;
+    }
+
+    .achievers-intro {
+      max-width: 680px;
+      margin: 0 auto;
+      color: #626b78;
+      line-height: 1.8;
+    }
+
+    .achievers-section {
+      padding: 30px 0 90px;
+      background: #f8f6f0;
+    }
+
+    .achievers-slider {
+      position: relative;
+      max-width: 1100px;
+      margin: 0 auto;
+      overflow: hidden;
+      border: 1px solid rgba(181, 139, 59, 0.35);
+      border-radius: 14px;
+      background: #142a4a;
+      box-shadow: 0 20px 55px rgba(20, 42, 74, 0.14);
+    }
+
+    .achievers-track {
+      display: flex;
+      transition: transform 0.55s ease-in-out;
+      will-change: transform;
+    }
+
+    .achievers-slide {
+      flex: 0 0 100%;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #142a4a;
+    }
+
+    .achievers-slide img {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 680px;
+      object-fit: contain;
+    }
+
+    .achievers-arrow {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      display: grid;
+      width: 44px;
+      height: 44px;
+      place-items: center;
+      transform: translateY(-50%);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      background: rgba(20, 42, 74, 0.86);
+      color: #fff;
+      font-size: 28px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .achievers-arrow:hover {
+      background: #b58b3b;
+    }
+
+    .achievers-prev {
+      left: 16px;
+    }
+
+    .achievers-next {
+      right: 16px;
+    }
+
+    .achievers-controls {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 20px 12px 0;
+    }
+
+    .achievers-dot {
+      width: 10px;
+      height: 10px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #c8cbd0;
+      cursor: pointer;
+      transition: width 0.2s ease, background 0.2s ease;
+    }
+
+    .achievers-dot.active {
+      width: 28px;
+      border-radius: 10px;
+      background: #b58b3b;
+    }
+
+    .achievers-counter {
+      margin-top: 12px;
+      text-align: center;
+      color: #626b78;
+      font-size: 0.85rem;
+    }
+
+    .achievers-note {
+      max-width: 760px;
+      margin: 35px auto 0;
+      color: #626b78;
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 600px) {
+      .achievers-hero {
+        padding: 50px 0 25px;
+      }
+
+      .achievers-section {
+        padding: 20px 0 60px;
+      }
+
+      .achievers-slider {
+        border-radius: 8px;
+      }
+
+      .achievers-arrow {
+        width: 36px;
+        height: 36px;
+        font-size: 23px;
+      }
+
+      .achievers-prev {
+        left: 8px;
+      }
+
+      .achievers-next {
+        right: 8px;
+      }
+
+      .achievers-slide img {
+        max-height: 500px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .achievers-track,
+      .achievers-dot {
+        transition: none;
+      }
+    }
+
+
+
+/* ==============================
+   SACE Student Testimonials
+================================ */
+
+.testimonials-section {
+  padding: 50px 0;
+  background: #f8f7f3;
+}
+
+.testimonials-heading {
+  max-width: 720px;
+  margin: 0 auto 42px;
+  text-align: center;
+}
+
+.testimonials-eyebrow {
+  color: #a9823b;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.testimonials-heading h2 {
+  margin: 14px 0;
+  color: #14243a;
+  font-family: "Playfair Display", serif;
+  font-size: clamp(30px, 4vw, 46px);
+}
+
+.testimonials-heading h2 span {
+  color: #b18a45;
+}
+
+.testimonials-heading p {
+  max-width: 590px;
+  margin: 0 auto;
+  color: #667085;
+  line-height: 1.8;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+  align-items: start;
+}
+
+.testimonial-card {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e9e3d7;
+  border-radius: 16px;
+  box-shadow: 0 10px 28px rgba(20, 36, 58, 0.07);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(20, 36, 58, 0.12);
+}
+
+.testimonial-video {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+}
+
+.testimonial-video .instagram-media {
+  width: calc(100% - 2px) !important;
+  min-width: 0 !important;
+  max-width: 100% !important;
+  margin: 0 auto !important;
+  border: 0 !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+}
+
+.testimonial-caption {
+  padding: 18px;
+  border-top: 1px solid #eee9df;
+}
+
+.testimonial-label {
+  color: #a9823b;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.testimonial-caption h3 {
+  margin: 8px 0 12px;
+  color: #14243a;
+  font-size: 17px;
+}
+
+.testimonial-caption a,
+.testimonials-more a {
+  color: #14243a;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.testimonial-caption a:hover,
+.testimonials-more a:hover {
+  color: #a9823b;
+}
+
+.testimonials-more {
+  margin-top: 38px;
+  text-align: center;
+}
+
+.testimonials-more a {
+  display: inline-block;
+  padding: 14px 24px;
+  color: #fff;
+  background: #14243a;
+  border: 1px solid #b18a45;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.testimonials-more a:hover {
+  color: #fff;
+  background: #243a56;
+}
+
+@media (max-width: 1100px) {
+  .testimonials-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+}
+
+@media (max-width: 560px) {
+  .testimonials-section {
+    padding: 55px 0;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 390px;
+    margin: 0 auto;
+  }
+
+  .testimonials-heading {
+    margin-bottom: 30px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonial-card,
+  .testimonials-more a {
+    transition: none;
+  }
+
+  .testimonial-card:hover {
+    transform: none;
+  }
+}
+
+
+/* =========================================
+   SACE ACHIEVERS & TESTIMONIALS
+   RESPONSIVE SAFETY FIXES
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent accidental horizontal overflow */
+.achievers-hero,
+.achievers-section,
+.achievers-slider,
+.testimonials-section,
+.testimonials-grid,
+.testimonial-card {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.achievers-hero,
+.achievers-section,
+.testimonials-section {
+  overflow-x: clip;
+}
+
+.achievers-intro,
+.achievers-note,
+.testimonials-heading p,
+.testimonial-caption h3 {
+  overflow-wrap: anywhere;
+}
+
+/* Achievers slider */
+.achievers-slider {
+  width: 100%;
+}
+
+.achievers-track {
+  width: 100%;
+}
+
+.achievers-slide {
+  flex-shrink: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.achievers-slide img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  max-height: 680px;
+  object-fit: contain;
+}
+
+/* Keep arrows visible and easy to tap */
+.achievers-arrow {
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Testimonials grid and embedded Instagram posts */
+.testimonials-grid {
+  width: 100%;
+}
+
+.testimonial-card {
+  width: 100%;
+}
+
+.testimonial-video {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+}
+
+.testimonial-video iframe,
+.testimonial-video blockquote,
+.testimonial-video .instagram-media {
+  max-width: 100% !important;
+}
+
+/* Tablet */
+@media (max-width: 900px) {
+  .achievers-slider {
+    border-radius: 10px;
+  }
+
+  .achievers-slide img {
+    max-height: 580px;
+  }
+
+  .testimonials-grid {
+    gap: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .achievers-hero h1 {
+    font-size: clamp(2rem, 7vw, 3rem);
+  }
+
+  .achievers-intro,
+  .achievers-note {
+    padding-right: 4px;
+    padding-left: 4px;
+  }
+
+  .achievers-slide img {
+    max-height: 500px;
+  }
+
+  .achievers-arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+  }
+
+  .achievers-controls {
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+    max-width: 390px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .testimonial-caption {
+    padding: 15px;
+  }
+
+  .testimonials-more a {
+    max-width: 100%;
+    text-align: center;
+  }
+}
+
+/* Narrow phones */
+@media (max-width: 360px) {
+  .achievers-hero {
+    padding-top: 40px;
+  }
+
+  .achievers-arrow {
+    width: 32px;
+    height: 32px;
+    font-size: 20px;
+  }
+
+  .achievers-prev {
+    left: 5px;
+  }
+
+  .achievers-next {
+    right: 5px;
+  }
+
+  .testimonials-heading h2 {
+    font-size: clamp(25px, 8vw, 30px);
+  }
+
+  .testimonial-caption {
+    padding: 12px;
+  }
+}
+
+/* Accessibility: reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .achievers-track,
+  .achievers-dot,
+  .testimonial-card,
+  .testimonials-more a {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .testimonial-card:hover {
+    transform: none;
+  }
+}
+
+
+/* Footer social links */
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+.footer-social-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: inherit;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.25s ease, transform 0.25s ease;
+}
+
+.footer-social-links a i {
+  font-size: 18px;
+}
+
+.footer-social-links a:hover {
+  color: #D4A843;
+  transform: translateY(-2px);
+}
+
+.footer-social-links a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* Responsive footer layout */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .footer-social-links {
+    order: 3;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 16px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+  }
+}
+
+@media (max-width: 420px) {
+  .footer-social-links {
+    gap: 12px;
+  }
+
+  .footer-social-links a {
+    font-size: 13px;
+  }
+}
+
+
+  </style>
+
+  <script src="js/components.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/achievers.js" defer></script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Shared header: loaded from components/header.html -->
+
+<div class="topbar">
+  <div class="container topbar-inner">
+    <p>Sandhya Academy of Competitive Exams</p>
+    <p class="topbar-note">Brodipet Main Road · Guntur, Andhra Pradesh</p>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="container nav-wrap">
+
+    <a class="brand" href="index.html" aria-label="SACE Guntur home">
+      <span class="brand-mark" aria-hidden="true">
+        <img
+          src="assets/Icon.png"
+          alt="SACE Guntur Logo"
+          style="max-width: 270px; width: 100%; height: auto;"
+        >
+      </span>
+
+      <span class="brand-copy">
+        <strong>SACE <span>GUNTUR</span></strong>
+        <small>Sandhya Academy of Competitive Exams</small>
+      </span>
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="index.html#home">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="index.html#faculty">Faculty</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#google-reviews">Student reviews</a>
+      <a href="achievers.html" aria-current="page">Achievers & Student Testimonials</a>
+      <a class="nav-cta" href="index.html#contact">
+        Enquire Now <span aria-hidden="true">↗</span>
+      </a>
+    </nav>
+
+  </div>
+</header>
+
+
+  <main id="main">
+    <section class="achievers-hero">
+      <div class="container">
+        <p class="eyebrow eyebrow-dark">
+          <span></span> CELEBRATING ACHIEVEMENT
+        </p>
+
+        <h1>Our <em>Achievers</em></h1>
+
+        <p class="achievers-intro">
+          Every achievement reflects dedication, consistent preparation
+          and the determination to reach a goal. Explore our achiever
+          banners and celebrate the success of our students.
+        </p>
+      </div>
+    </section>
+
+    <section class="achievers-section" aria-label="Achiever banner gallery">
+      <div class="container">
+
+        <div class="achievers-slider"
+             id="achievers-slider"
+             aria-roledescription="carousel"
+             aria-label="SACE achiever banners">
+
+          <div class="achievers-track" id="achievers-track">
+
+            <!-- Replace these paths with your actual banner filenames. -->
+            <div class="achievers-slide">
+              <img src="assets/Achievers/full.webp"
+                   alt="SACE student achievers banner"
+                   fetchpriority="high">
+            </div>
+            
+            <div class="achievers-slide">
+              <img src="assets/Achievers/Ecet2025CME.png"
+                   alt="SACE student achievers banner"
+                   fetchpriority="high">
+            </div>
+
+            <div class="achievers-slide">
+              <img src="assets/Achievers/CmeEcet.png"
+                   alt="SACE competitive examination achievements"
+                   loading="lazy">
+            </div>
+
+            <div class="achievers-slide">
+              <img src="assets/Achievers/polyrcet.webp"
+                   alt="SACE competitive examination achievements"
+                   loading="lazy">
+            </div>
+
+            <div class="achievers-slide">
+              <img src="assets/Achievers/ToppersBanner.png"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+             <div class="achievers-slide">
+              <img src="assets/Achievers/gatetoppers.png"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+             <div class="achievers-slide">
+              <img src="assets/Achievers/unnamed.webp"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+             <div class="achievers-slide">
+              <img src="assets/Achievers/unnamed1.webp"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+             <div class="achievers-slide">
+              <img src="assets/Achievers/unnamed2.webp"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+            <div class="achievers-slide">
+              <img src="assets/Achievers/ecet34.webp"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+             <div class="achievers-slide">
+              <img src="assets/Achievers/eie9th.webp"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+             <div class="achievers-slide">
+              <img src="assets/Achievers/ecet173.webp"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+            <div class="achievers-slide">
+              <img src="assets/Achievers/ecet1.webp"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+             <div class="achievers-slide">
+              <img src="assets/Achievers/ecet3.webp"
+                   alt="SACE student success banner"
+                   loading="lazy">
+            </div>
+
+          </div>
+
+          <button class="achievers-arrow achievers-prev"
+                  id="achievers-prev"
+                  type="button"
+                  aria-label="Previous achiever banner">
+            &#8249;
+          </button>
+
+          <button class="achievers-arrow achievers-next"
+                  id="achievers-next"
+                  type="button"
+                  aria-label="Next achiever banner">
+            &#8250;
+          </button>
+        </div>
+
+        <div class="achievers-controls"
+             id="achievers-controls"
+             aria-label="Choose achiever banner">
+        </div>
+
+        <p class="achievers-counter"
+           id="achievers-counter"
+           aria-live="polite">
+          Banner 1 of 3
+        </p>
+
+        <p class="achievers-note">
+          For details about courses, preparation and current batches,
+          please contact Sandhya Academy of Competitive Exams, Guntur.
+        </p>
+
+      </div>
+    </section>
+  </main>
+
+  
+<!-- Student Testimonials -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="testimonials-heading">
+      <span class="testimonials-eyebrow">REAL STUDENTS · REAL EXPERIENCES</span>
+      <h2>Student <span>Testimonials</span></h2>
+      <p>
+        Hear directly from SACE students about their learning experiences
+        and preparation journey.
+      </p>
+    </div>
+
+    <div class="testimonials-grid">
+
+      <!-- Instagram Reel 1 -->
+      <article class="testimonial-card">
+        <div class="testimonial-video">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DWjbhfLDH8h/"
+            data-instgrm-version="14">
+          </blockquote>
+        </div>
+        <div class="testimonial-caption">
+          <span class="testimonial-label">STUDENT STORY</span>
+          <h3>Student Experience</h3>
+          <a href="https://www.instagram.com/reel/DWjbhfLDH8h/"
+             target="_blank" rel="noopener noreferrer">
+            Watch on Instagram ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Instagram Reel 2 -->
+      <article class="testimonial-card">
+        <div class="testimonial-video">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DWrJfAxk4yS/"
+            data-instgrm-version="14">
+          </blockquote>
+        </div>
+        <div class="testimonial-caption">
+          <span class="testimonial-label">STUDENT STORY</span>
+          <h3>Learning at SACE</h3>
+          <a href="https://www.instagram.com/reel/DWrJfAxk4yS/"
+             target="_blank" rel="noopener noreferrer">
+            Watch on Instagram ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Instagram Reel 3 -->
+      <article class="testimonial-card">
+        <div class="testimonial-video">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DW9KKuEk-Eo/"
+            data-instgrm-version="14">
+          </blockquote>
+        </div>
+        <div class="testimonial-caption">
+          <span class="testimonial-label">STUDENT STORY</span>
+          <h3>Student Journey</h3>
+          <a href="https://www.instagram.com/reel/DW9KKuEk-Eo/"
+             target="_blank" rel="noopener noreferrer">
+            Watch on Instagram ↗
+          </a>
+        </div>
+      </article>
+
+      <!-- Instagram Reel 4 -->
+      <article class="testimonial-card">
+        <div class="testimonial-video">
+          <blockquote
+            class="instagram-media"
+            data-instgrm-permalink="https://www.instagram.com/reel/DWxu99KE0w8/"
+            data-instgrm-version="14">
+          </blockquote>
+        </div>
+        <div class="testimonial-caption">
+          <span class="testimonial-label">STUDENT STORY</span>
+          <h3>Life at SACE</h3>
+          <a href="https://www.instagram.com/reel/DWxu99KE0w8/"
+             target="_blank" rel="noopener noreferrer">
+            Watch on Instagram ↗
+          </a>
+        </div>
+      </article>
+
+    </div>
+
+    <div class="testimonials-more">
+      <a href="https://www.instagram.com/sace_guntur_official/"
+         target="_blank" rel="noopener noreferrer">
+        Explore More on Instagram ↗
+      </a>
+    </div>
+  </div>
+</section>
+
+
+
+<footer class="site-footer">
+  <div class="container footer-top">
+
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-mark">
+        <img
+          src="assets/Icon.png"
+          alt="SACE Guntur Logo"
+          style="width: 42px; height: 42px; object-fit: contain;"
+        >
+      </span>
+
+      <span class="brand-copy">
+        <strong>SACE <span>GUNTUR</span></strong>
+        <small>Sandhya Academy of Competitive Exams</small>
+      </span>
+    </a>
+
+    <!-- Social media links -->
+    <div class="footer-social-links">
+      <a
+        href="https://www.instagram.com/sace_guntur_official/"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit SACE on Instagram"
+      >
+        <i class="fa-brands fa-instagram"></i>
+        <span>Instagram</span>
+      </a>
+
+      <a
+        href="https://www.youtube.com/@SACEGunturOfficial"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Visit SACE on YouTube"
+      >
+        <i class="fa-brands fa-youtube"></i>
+        <span>YouTube</span>
+      </a>
+
+      <a
+        href="https://play.google.com/store/apps/details?id=co.griffin.pnxfw&hl=en_IN"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Download the SACE app"
+      >
+        <i class="fa-brands fa-google-play"></i>
+        <span>Download App</span>
+      </a>
+    </div>
+
+    <a class="back-top" href="#main">Back to top ↑</a>
+  </div>
+
+  <div class="container footer-bottom">
+    <p>© <span id="year"></span> SACE Guntur. All rights reserved.</p>
+    <p>Course details and admissions are subject to confirmation by the academy.</p>
+  </div>
+</footer>
+
+
+  <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+  const slider = document.getElementById("achievers-slider");
+  const track = document.getElementById("achievers-track");
+  const slides = Array.from(
+    document.querySelectorAll(".achievers-slide")
+  );
+  const controls = document.getElementById("achievers-controls");
+  const counter = document.getElementById("achievers-counter");
+  const previousButton = document.getElementById("achievers-prev");
+  const nextButton = document.getElementById("achievers-next");
+
+  if (!slider || !track || slides.length === 0 || !controls) return;
+
+  let currentIndex = 0;
+  let timer = null;
+
+  const dots = slides.map((_, index) => {
+    const dot = document.createElement("button");
+
+    dot.type = "button";
+    dot.className = "achievers-dot";
+    dot.setAttribute("aria-label", `Show banner ${index + 1}`);
+
+    dot.addEventListener("click", () => {
+      showSlide(index);
+      restartTimer();
+    });
+
+    controls.appendChild(dot);
+    return dot;
+  });
+
+  function showSlide(index) {
+    currentIndex = (index + slides.length) % slides.length;
+
+    track.style.transform =
+      `translateX(-${currentIndex * 100}%)`;
+
+    dots.forEach((dot, dotIndex) => {
+      const active = dotIndex === currentIndex;
+
+      dot.classList.toggle("active", active);
+
+      if (active) {
+        dot.setAttribute("aria-current", "true");
+      } else {
+        dot.removeAttribute("aria-current");
+      }
+    });
+
+    if (counter) {
+      counter.textContent =
+        `Banner ${currentIndex + 1} of ${slides.length}`;
+    }
+  }
+
+  function nextSlide() {
+    showSlide(currentIndex + 1);
+  }
+
+  function previousSlide() {
+    showSlide(currentIndex - 1);
+  }
+
+  function stopTimer() {
+    if (timer !== null) {
+      clearInterval(timer);
+      timer = null;
+    }
+  }
+
+  function startTimer() {
+    stopTimer();
+
+    if (
+      slides.length > 1 &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      timer = setInterval(nextSlide, 5000);
+    }
+  }
+
+  function restartTimer() {
+    startTimer();
+  }
+
+  nextButton?.addEventListener("click", () => {
+    nextSlide();
+    restartTimer();
+  });
+
+  previousButton?.addEventListener("click", () => {
+    previousSlide();
+    restartTimer();
+  });
+
+  slider.addEventListener("mouseenter", stopTimer);
+  slider.addEventListener("mouseleave", startTimer);
+
+  slider.addEventListener("focusin", stopTimer);
+  slider.addEventListener("focusout", (event) => {
+    if (!slider.contains(event.relatedTarget)) {
+      startTimer();
+    }
+  });
+
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) {
+      stopTimer();
+    } else {
+      startTimer();
+    }
+  });
+
+  showSlide(0);
+  startTimer();
+});
+
+
+ 
+(function () {
+  const section = document.querySelector("#testimonials");
+
+  if (!section) return;
+
+  let embedLoaded = false;
+
+  function loadInstagramEmbeds() {
+    if (embedLoaded) return;
+    embedLoaded = true;
+
+    const script = document.createElement("script");
+    script.src = "https://www.instagram.com/embed.js";
+    script.async = true;
+    script.onload = function () {
+      if (window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+    };
+
+    document.body.appendChild(script);
+  }
+
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(
+      function (entries) {
+        if (entries.some(entry => entry.isIntersecting)) {
+          loadInstagramEmbeds();
+          observer.disconnect();
+        }
+      },
+      { rootMargin: "300px 0px" }
+    );
+
+    observer.observe(section);
+  } else {
+    loadInstagramEmbeds();
+  }
+})();
+ 
+
+  </script>
+  <script async src="https://www.instagram.com/embed.js"></script>
+  <div class="sace-social-sidebar">
+  <a href="https://www.instagram.com/sace_guntur_official/"
+     target="_blank" rel="noopener noreferrer"
+     class="social-icon instagram"
+     aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+    <span>Instagram</span>
+  </a>
+
+  <a href="https://www.youtube.com/@SACEGunturOfficial"
+     target="_blank" rel="noopener noreferrer"
+     class="social-icon youtube"
+     aria-label="YouTube">
+    <i class="fa-brands fa-youtube"></i>
+    <span>YouTube</span>
+  </a>
+
+  <a href="https://play.google.com/store/apps/details?id=co.griffin.pnxfw&hl=en_IN"
+     target="_blank" rel="noopener noreferrer"
+     class="social-icon app"
+     aria-label="Download App">
+    <i class="fa-brands fa-google-play"></i>
+    <span>Download <br>Learning App</span>
+  </a>
+</div>
+</body>
+</html>
