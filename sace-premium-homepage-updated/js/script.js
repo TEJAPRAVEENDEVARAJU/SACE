@@ -34,17 +34,22 @@ document.querySelectorAll("[data-course]").forEach((link) => {
 });
 
 
+
 const enquiryForm = document.querySelector("#enquiry-form");
 const formMessage = document.querySelector("#form-message");
 
 if (enquiryForm && formMessage) {
-  enquiryForm.addEventListener("submit", (event) => {
+  enquiryForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     if (!enquiryForm.checkValidity()) {
       enquiryForm.reportValidity();
       return;
     }
+
+    const submitButton = enquiryForm.querySelector(
+      'button[type="submit"]'
+    );
 
     const formData = new FormData(enquiryForm);
 
@@ -68,22 +73,69 @@ Message: ${question || "No additional message"}
 
 Please share the course fees, timings and eligibility. Thank you.`;
 
-    // Replace with SACE's verified WhatsApp number.
     const whatsappNumber = "918143767679";
-
-    if (!/^91\d{10}$/.test(whatsappNumber)) {
-      formMessage.textContent =
-        "The enquiry form is not configured yet. Please call SACE or email saceguntur@gmail.com.";
-      return;
-    }
 
     const whatsappURL =
       `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
 
-    formMessage.textContent =
-      "Opening WhatsApp. Please review and send your enquiry.";
+    // Open WhatsApp tab during the user interaction
+    const whatsappTab = window.open("about:blank", "_blank");
 
-    window.open(whatsappURL, "_blank", "noopener,noreferrer");
+    if (whatsappTab) {
+      whatsappTab.opener = null;
+    }
+
+    try {
+      if (submitButton) {
+        submitButton.disabled = true;
+        submitButton.textContent = "Submitting...";
+      }
+
+      formMessage.textContent = "Submitting your enquiry...";
+
+      // Submit enquiry to Netlify Forms
+      const response = await fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: new URLSearchParams(formData).toString()
+      });
+
+      if (!response.ok) {
+        throw new Error("Netlify form submission failed");
+      }
+
+      formMessage.textContent =
+        "Your enquiry has been submitted successfully. Opening WhatsApp...";
+
+      // Continue to WhatsApp after successful submission
+      if (whatsappTab) {
+        whatsappTab.location.href = whatsappURL;
+      } else {
+        formMessage.textContent =
+          "Your enquiry was submitted successfully. Please contact SACE on 81437 67679.";
+      }
+
+      enquiryForm.reset();
+
+    } catch (error) {
+      if (whatsappTab) {
+        whatsappTab.close();
+      }
+
+      console.error("Enquiry submission error:", error);
+
+      formMessage.textContent =
+        "Unable to submit your enquiry. Please try again or contact saceguntur@gmail.com.";
+
+    } finally {
+      if (submitButton) {
+        submitButton.disabled = false;
+        submitButton.innerHTML =
+          'Prepare Enquiry <span>→</span>';
+      }
+    }
   });
 }
 
