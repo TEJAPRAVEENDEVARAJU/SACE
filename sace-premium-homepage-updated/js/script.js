@@ -489,3 +489,60 @@ if (document.readyState === "loading") {
 } else {
   initializeSaceGoogleReviews();
 }
+
+
+
+
+/* SACE Faculty Carousel */
+(() => {
+  const section = document.querySelector(".sace-faculty");
+  if (!section) return;
+
+  const cards = [...section.querySelectorAll(".sfc-card")];
+  const dots = [...section.querySelectorAll(".sfc-dots button")];
+  const prev = section.querySelector(".sfc-prev");
+  const next = section.querySelector(".sfc-next");
+
+  if (!cards.length) return;
+
+  let active = 1;
+
+  function render() {
+    cards.forEach((card, index) => {
+      const position =
+        (index - active + cards.length) % cards.length;
+
+      card.dataset.position =
+        position === 0 ? "center" :
+        position === 1 ? "right" : "left";
+
+      card.classList.toggle("is-active", position === 0);
+    });
+
+    dots.forEach((dot, index) => {
+      dot.classList.toggle("active", index === active);
+    });
+  }
+
+  function moveNext() {
+    active = (active + 1) % cards.length;
+    render();
+  }
+
+  function movePrev() {
+    active = (active - 1 + cards.length) % cards.length;
+    render();
+  }
+
+  next.addEventListener("click", moveNext);
+  prev.addEventListener("click", movePrev);
+
+  dots.forEach((dot, index) => {
+    dot.addEventListener("click", () => {
+      active = index;
+      render();
+    });
+  });
+
+  render();
+})();
