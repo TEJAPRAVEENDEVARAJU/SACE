@@ -516,7 +516,16 @@
   name="sace-enquiry"
   method="POST"
   data-netlify="true"
+  netlify-honeypot="bot-field"
 >
+  <input type="hidden" name="form-name" value="sace-enquiry">
+
+  <p hidden>
+    <label>
+      Don't fill this out:
+      <input name="bot-field">
+    </label>
+  </p>
           <h3>Course Registration & Admission Enquiry Form</h3>
           <p class="form-intro">Fill in your details to prepare an enquiry.</p>
           <label for="full-name">Full name</label><input id="full-name" name="fullName" autocomplete="name" required
