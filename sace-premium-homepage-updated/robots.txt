@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://saceacademy.netlify.app/sitemap.xml
