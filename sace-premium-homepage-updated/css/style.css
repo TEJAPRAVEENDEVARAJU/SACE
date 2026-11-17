@@ -1,4 +1,5 @@
 /* SACE Guntur — Premium navy, ivory and gold */
+
 :root {
   --navy: #142a4a;
   --navy-deep: #0c1b31;
@@ -20,18 +21,6 @@
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 95px;
-}
-
-body {
-  font-family: var(--sans);
-  color: var(--ink);
-  line-height: 1.65;
-  background: var(--white);
-}
-
 a {
   color: inherit;
   text-decoration: none;
@@ -43,22 +32,12 @@ textarea {
   font: inherit;
 }
 
-button,
-a {
-  -webkit-tap-highlight-color: transparent;
-}
-
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
   outline: 3px solid var(--gold);
   outline-offset: 3px;
-}
-
-.container {
-  width: min(1160px, 90%);
-  margin-inline: auto;
 }
 
 .skip-link {
@@ -117,17 +96,6 @@ textarea:focus-visible {
   min-width: 0;
 }
 
-.brand-mark {
-  width: 46px;
-  height: 46px;
-  display: grid;
-  place-items: center;
-  background: var(--navy);
-  color: var(--gold);
-  border: 1px solid var(--gold);
-  font: 600 1.75rem var(--serif);
-}
-
 .brand-copy {
   display: grid;
   line-height: 1.3;
@@ -155,13 +123,14 @@ textarea:focus-visible {
   gap: clamp(1rem, 2.4vw, 2rem);
   font-size: .88rem;
   font-weight: 600;
+  min-width: 0;
 }
 
-.site-nav>a:not(.nav-cta) {
+.site-nav > a:not(.nav-cta) {
   transition: color .2s;
 }
 
-.site-nav>a:not(.nav-cta):hover {
+.site-nav > a:not(.nav-cta):hover {
   color: #9a752d;
 }
 
@@ -229,7 +198,7 @@ textarea:focus-visible {
   font-weight: 700;
 }
 
-.eyebrow>span {
+.eyebrow > span {
   width: 28px;
   height: 1px;
   background: var(--gold);
@@ -570,6 +539,8 @@ h2 {
   position: relative;
   background: #fff;
   transition: transform .2s, box-shadow .2s, border-color .2s;
+  min-width: 0;
+  padding-bottom: 4.5rem;
 }
 
 .course-card:hover {
@@ -607,7 +578,7 @@ h2 {
   margin: .55rem 0 .65rem;
 }
 
-.course-card>p:not(.card-label) {
+.course-card > p:not(.card-label) {
   color: var(--muted);
   font-size: .86rem;
 }
@@ -624,6 +595,7 @@ h2 {
   color: var(--navy);
   font-size: .78rem;
   font-weight: 700;
+  gap: 0.75rem;
 }
 
 .card-link span {
@@ -651,7 +623,7 @@ h2 {
   color: var(--gold);
 }
 
-.approach-panel>p:not(.eyebrow) {
+.approach-panel > p:not(.eyebrow) {
   color: #cbd5e1;
   margin-bottom: 1.7rem;
   max-width: 440px;
@@ -700,7 +672,7 @@ h2 {
   margin: 1rem 0;
 }
 
-.contact-copy>p:not(.eyebrow) {
+.contact-copy > p:not(.eyebrow) {
   color: var(--muted);
   max-width: 460px;
 }
@@ -819,11 +791,6 @@ h2 {
   font-size: .7rem;
 }
 
-.site-footer {
-  background: #081629;
-  color: var(--white);
-}
-
 .footer-top {
   display: flex;
   align-items: center;
@@ -843,16 +810,6 @@ h2 {
 .back-top {
   color: var(--gold-light);
   font-size: .8rem;
-}
-
-.footer-bottom {
-  display: flex;
-  justify-content: space-between;
-  gap: 1rem;
-  border-top: 1px solid #ffffff1b;
-  padding: 1.2rem 0;
-  color: #aeb9c8;
-  font-size: .72rem;
 }
 
 @media (max-width: 900px) {
@@ -891,11 +848,6 @@ h2 {
     min-height: 76px;
   }
 
-  .brand-mark {
-    width: 40px;
-    height: 40px;
-  }
-
   .brand-copy strong {
     font-size: .95rem;
   }
@@ -929,7 +881,7 @@ h2 {
     display: flex;
   }
 
-  .site-nav>a:not(.nav-cta) {
+  .site-nav > a:not(.nav-cta) {
     padding: .75rem 0;
     border-bottom: 1px solid #eef0f3;
   }
@@ -956,12 +908,6 @@ h2 {
 
   .hero h1 {
     font-size: clamp(2.65rem, 12vw, 4rem);
-  }
-
-  .hero-visual {
-    max-width: 470px;
-    width: 100%;
-    margin: auto;
   }
 
   .visual-frame {
@@ -991,16 +937,8 @@ h2 {
     padding-top: 0;
   }
 
-  .section-heading {
-    display: block;
-  }
-
   .section-subtitle {
     margin-top: 1rem;
-  }
-
-  .course-grid {
-    grid-template-columns: 1fr;
   }
 
   .course-card {
@@ -1017,10 +955,6 @@ h2 {
 }
 
 @media (max-width: 420px) {
-  .container {
-    width: 88%;
-  }
-
   .brand {
     gap: .55rem;
   }
@@ -1067,21 +1001,8 @@ h2 {
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    transition-duration: .01ms !important;
-    animation-duration: .01ms !important;
-  }
-}
-
-
 /* Added for the SACE brochure-based homepage */
+
 .trust-strip {
   background: var(--ivory);
   border-bottom: 1px solid #e9e5dc;
@@ -1237,13 +1158,6 @@ h2 {
 }
 
 @media (max-width: 760px) {
-  .trust-inner {
-    flex-wrap: wrap;
-    justify-content: center;
-    row-gap: .65rem;
-    font-size: .61rem;
-  }
-
   .trust-inner i {
     margin: 0 .2rem;
   }
@@ -1282,8 +1196,8 @@ h2 {
   }
 }
 
-
 /* SACE Image Popup */
+
 .sace-popup-overlay {
   position: fixed;
   inset: 0;
@@ -1294,7 +1208,6 @@ h2 {
   padding: 16px;
   background: rgba(4, 12, 27, 0.82);
   backdrop-filter: blur(5px);
-
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -1381,8 +1294,8 @@ body.sace-popup-open {
   }
 }
 
-
 /* SACE photo slider inside hero */
+
 .sace-gallery .visual-frame {
   position: relative;
   overflow: hidden;
@@ -1462,8 +1375,13 @@ body.sace-popup-open {
   cursor: pointer;
 }
 
-.sace-gallery .sace-prev { left: 10px; }
-.sace-gallery .sace-next { right: 10px; }
+.sace-gallery .sace-prev {
+  left: 10px;
+}
+
+.sace-gallery .sace-next {
+  right: 10px;
+}
 
 .sace-gallery .sace-dots {
   position: absolute;
@@ -1496,22 +1414,12 @@ body.sace-popup-open {
   }
 }
 
-  
 /* =========================================
    SACE GUNTUR — RESPONSIVE IMPROVEMENTS
    Add at the END of your existing stylesheet
 ========================================= */
 
 /* Prevent unwanted horizontal overflow */
-html {
-  width: 100%;
-  overflow-x: clip;
-}
-
-body {
-  width: 100%;
-  min-width: 0;
-}
 
 img,
 video,
@@ -1547,35 +1455,37 @@ img {
 }
 
 /* Actual logo image inside the brand mark */
+
 .brand-mark {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  background: var(--navy);
+  color: var(--gold);
+  border: 1px solid var(--gold);
+  font: 600 1.75rem var(--serif);
   flex: 0 0 46px;
   overflow: hidden;
 }
 
 .brand-mark img {
+  max-width: 100%;
   display: block;
   width: 100%;
   height: 100%;
-  max-width: 100%;
   object-fit: contain;
 }
 
 /* Prevent course text from colliding with the card link */
-.course-card {
-  min-width: 0;
-  padding-bottom: 4.5rem;
-}
 
 .course-card h3,
 .course-card > p {
   overflow-wrap: anywhere;
 }
 
-.card-link {
-  gap: 0.75rem;
-}
-
 /* Forms should fit their parent */
+
 .enquiry-form,
 .enquiry-form input,
 .enquiry-form textarea,
@@ -1592,6 +1502,7 @@ img {
 }
 
 /* Tablet: switch to the collapsible navigation earlier */
+
 @media (max-width: 1000px) {
   .nav-wrap {
     gap: 1rem;
@@ -1600,25 +1511,6 @@ img {
   .menu-toggle {
     display: block;
     flex: 0 0 auto;
-  }
-
-  .site-nav {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    padding: 1rem 5% 1.3rem;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 0;
-    background: var(--white);
-    border-bottom: 1px solid var(--line);
-    box-shadow: 0 15px 25px #142a4a12;
-  }
-
-  .site-nav.open {
-    display: flex;
   }
 
   .site-nav > a:not(.nav-cta) {
@@ -1643,6 +1535,7 @@ img {
 }
 
 /* Tablet and mobile layouts */
+
 @media (max-width: 760px) {
   .hero-grid,
   .intro-grid,
@@ -1657,16 +1550,21 @@ img {
   }
 
   .hero-visual {
+    margin: auto;
     width: 100%;
     max-width: 470px;
     margin-inline: auto;
   }
 
   .section-heading {
+    display: block;
     align-items: flex-start;
   }
 
   .trust-inner {
+    justify-content: center;
+    row-gap: .65rem;
+    font-size: .61rem;
     flex-wrap: wrap;
   }
 
@@ -1686,6 +1584,7 @@ img {
 }
 
 /* Small mobile screens */
+
 @media (max-width: 480px) {
   .container {
     width: 90%;
@@ -1770,11 +1669,8 @@ img {
 }
 
 /* Very narrow phones */
-@media (max-width: 360px) {
-  .container {
-    width: 92%;
-  }
 
+@media (max-width: 360px) {
   .brand-mark {
     flex-basis: 32px;
     width: 32px;
@@ -1807,10 +1703,7 @@ img {
   }
 }
 
-
-
 /* all device --> responsive */
-
 
 /* ==========================================
    SACE GUNTUR — GLOBAL RESPONSIVE UPGRADE
@@ -1818,6 +1711,7 @@ img {
 ========================================== */
 
 /* 1. Consistent sizing and overflow protection */
+
 *,
 *::before,
 *::after {
@@ -1833,6 +1727,10 @@ html {
 }
 
 body {
+  font-family: var(--sans);
+  color: var(--ink);
+  line-height: 1.65;
+  background: var(--white);
   width: 100%;
   max-width: 100%;
   min-width: 0;
@@ -1888,6 +1786,7 @@ main,
 }
 
 /* 2. Flexible grids and columns */
+
 .course-grid,
 .testimonials-grid,
 .trust-grid,
@@ -1908,6 +1807,7 @@ main,
 }
 
 /* 3. Responsive header and navigation */
+
 .site-header,
 .site-header .container {
   min-width: 0;
@@ -1925,26 +1825,12 @@ main,
   flex-shrink: 0;
 }
 
-.brand {
-  min-width: 0;
-}
-
-.brand-mark img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.site-nav {
-  min-width: 0;
-}
-
 .site-nav a {
   overflow-wrap: normal;
 }
 
 /* 4. Responsive hero sections */
+
 .hero,
 .courses-hero,
 .achievers-hero {
@@ -1969,6 +1855,7 @@ main,
 }
 
 /* 5. Flexible buttons and forms */
+
 .button,
 .card-link {
   max-width: 100%;
@@ -1995,6 +1882,7 @@ textarea {
 }
 
 /* 6. Images and sliders */
+
 .achievers-slider,
 .sace-gallery,
 .course-image,
@@ -2011,6 +1899,7 @@ textarea {
 }
 
 /* 7. Modal and popup sizing */
+
 .exam-modal,
 .sace-popup-overlay {
   box-sizing: border-box;
@@ -2040,6 +1929,7 @@ textarea {
 /* ==========================================
    TABLETS — 761px to 1000px
 ========================================== */
+
 @media (max-width: 1000px) {
   .container {
     width: min(100% - 40px, 900px);
@@ -2055,18 +1945,16 @@ textarea {
   }
 
   /* Keep the header from becoming overcrowded */
+
   .site-header .container {
     flex-wrap: wrap;
-  }
-
-  .site-nav {
-    gap: 14px;
   }
 }
 
 /* ==========================================
    MOBILE — 760px and below
 ========================================== */
+
 @media (max-width: 760px) {
   html {
     scroll-padding-top: 72px;
@@ -2149,6 +2037,7 @@ textarea {
 /* ==========================================
    SMALL PHONES — 420px and below
 ========================================== */
+
 @media (max-width: 420px) {
   .container {
     width: calc(100% - 24px);
@@ -2211,6 +2100,7 @@ textarea {
 /* ==========================================
    VERY SMALL PHONES — 360px and below
 ========================================== */
+
 @media (max-width: 360px) {
   .container {
     width: calc(100% - 20px);
@@ -2233,6 +2123,7 @@ textarea {
 }
 
 /* 8. Accessibility */
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -2248,8 +2139,6 @@ textarea {
   }
 }
 
-
- 
 /* ========================================
    SACE GOOGLE REVIEWS - RESPONSIVE DESIGN
 ======================================== */
@@ -2389,8 +2278,7 @@ textarea {
   border-radius: 15px;
   box-shadow: 0 7px 24px rgba(16, 35, 63, 0.055);
   overflow-wrap: anywhere;
-  transition:
-    transform 0.25s ease,
+  transition: transform 0.25s ease,
     box-shadow 0.25s ease,
     border-color 0.25s ease;
 }
@@ -2498,8 +2386,7 @@ textarea {
   text-decoration: none;
   overflow-wrap: anywhere;
   cursor: pointer;
-  transition:
-    background 0.2s ease,
+  transition: background 0.2s ease,
     color 0.2s ease,
     transform 0.2s ease;
 }
@@ -2646,8 +2533,6 @@ textarea {
   }
 }
 
-
-
 .sace-social-sidebar {
   position: fixed;
   right: 16px;
@@ -2731,36 +2616,10 @@ textarea {
   }
 }
 
-
-
-
-
 /* Footer social links */
-.footer-social-links {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 18px;
-}
-
-.footer-social-links a {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  color: inherit;
-  text-decoration: none;
-  font-size: 14px;
-  transition: color 0.25s ease, transform 0.25s ease;
-}
 
 .footer-social-links a i {
   font-size: 18px;
-}
-
-.footer-social-links a:hover {
-  color: #D4A843;
-  transform: translateY(-2px);
 }
 
 .footer-social-links a:focus-visible {
@@ -2769,6 +2628,7 @@ textarea {
 }
 
 /* Responsive footer layout */
+
 @media (max-width: 768px) {
   .footer-top {
     flex-wrap: wrap;
@@ -2798,11 +2658,11 @@ textarea {
   }
 }
 
-
-
 /* Smooth mobile navigation */
+
 @media (max-width: 1000px) {
   .site-nav {
+    box-shadow: 0 15px 25px #142a4a12;
     display: flex !important;
     position: absolute;
     top: 100%;
@@ -2828,6 +2688,7 @@ textarea {
   }
 
   .site-nav.open {
+    display: flex;
     max-height: 85vh;
     overflow-y: auto;
     visibility: visible;
@@ -2843,8 +2704,6 @@ textarea {
     transition: none !important;
   }
 }
-
-
 
 /* =====================================
    SACE CENTER-FOCUSED FACULTY CAROUSEL
@@ -2909,8 +2768,7 @@ textarea {
   border-radius: 5px;
   opacity: .55;
   transform: translate(-50%, -50%) scale(.78);
-  transition:
-    transform .55s ease,
+  transition: transform .55s ease,
     opacity .55s ease,
     box-shadow .55s ease;
   pointer-events: none;
@@ -3269,3 +3127,415 @@ textarea {
   }
 }
 
+/* =========================================
+   SACE NAVBAR - LARGER RESPONSIVE LOGO
+========================================= */
+
+.site-header .nav-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Desktop */
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  flex: 0 1 360px;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.site-header .brand-logo {
+  display: block;
+  width: 100%;
+  max-width: 360px;
+  height: 90px;
+  object-fit: contain;
+  object-position: left center;
+}
+
+/* Navigation */
+
+.site-header .site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+  min-width: 0;
+  gap: clamp(8px, 1vw, 14px);
+}
+
+/* Laptop */
+
+@media (max-width: 1200px) {
+  .site-header .brand {
+    flex-basis: 290px;
+  }
+
+  .site-header .brand-logo {
+    max-width: 290px;
+    height: 78px;
+  }
+
+  .site-header .site-nav {
+    gap: 8px;
+  }
+}
+
+/* Tablet */
+
+@media (max-width: 1024px) {
+  .site-header .brand {
+    flex-basis: 250px;
+  }
+
+  .site-header .brand-logo {
+    max-width: 250px;
+    height: 70px;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+  .site-header .nav-wrap {
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .site-header .brand {
+    flex: 0 1 270px;
+  }
+
+  .site-header .brand-logo {
+    max-width: 270px;
+    height: 68px;
+  }
+}
+
+/* Small mobile */
+
+@media (max-width: 420px) {
+  .site-header .brand {
+    flex-basis: 225px;
+  }
+
+  .site-header .brand-logo {
+    max-width: 225px;
+    height: 62px;
+  }
+}
+
+/* =========================================
+   SACE PREMIUM FOUR-COLUMN FOOTER
+   Navy Blue | Gold | Responsive
+========================================= */
+
+.site-footer {
+  width: 100%;
+  background: #081629;
+  color: #ffffff;
+  margin-top: 0;
+}
+
+/* Main footer layout */
+
+.sace-footer-main {
+  display: grid;
+  grid-template-columns: 1.35fr 0.8fr 1.35fr 1fr;
+  gap: 42px;
+  padding-top: 65px;
+  padding-bottom: 55px;
+  align-items: start;
+}
+
+.sace-footer-column {
+  min-width: 0;
+}
+
+/* Brand logo */
+
+.footer-brand {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  text-decoration: none;
+  margin-bottom: 18px;
+}
+
+.footer-brand-logo {
+  display: block;
+  width: 230px;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.footer-about-text,
+.footer-connect-text {
+  color: rgba(255,255,255,0.72);
+  font-size: 13.5px;
+  line-height: 1.85;
+  margin: 0 0 20px;
+}
+
+/* Column headings */
+
+.sace-footer-heading {
+  position: relative;
+  color: #ffffff;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  font-weight: 600;
+  margin: 5px 0 25px;
+  padding-bottom: 13px;
+}
+
+.sace-footer-heading::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 38px;
+  height: 2px;
+  background: #d7b66e;
+}
+
+/* Quick links */
+
+.sace-footer-links,
+.sace-footer-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sace-footer-links li {
+  margin-bottom: 13px;
+}
+
+.sace-footer-links a {
+  display: inline-block;
+  color: rgba(255,255,255,0.72);
+  font-size: 13.5px;
+  text-decoration: none;
+  transition: color 0.25s ease, padding-left 0.25s ease;
+}
+
+.sace-footer-links a:hover {
+  color: #d7b66e;
+  padding-left: 5px;
+}
+
+/* Contact details */
+
+.sace-footer-contact li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 19px;
+  color: rgba(255,255,255,0.75);
+  font-size: 13px;
+  line-height: 1.75;
+  overflow-wrap: anywhere;
+}
+
+.sace-footer-contact li > i {
+  flex: 0 0 17px;
+  color: #d7b66e;
+  font-size: 15px;
+  margin-top: 4px;
+}
+
+.sace-footer-contact a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.sace-footer-contact a:hover {
+  color: #d7b66e;
+}
+
+/* Social media icons */
+
+.footer-social-links {
+  justify-content: center;
+  flex-wrap: wrap;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.footer-social-links a {
+  gap: 7px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 39px;
+  height: 39px;
+  border: 1px solid rgba(215,182,110,0.45);
+  border-radius: 50%;
+  color: #d7b66e;
+  font-size: 16px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-social-links a:hover {
+  color: #142a4a;
+  background: #d7b66e;
+  border-color: #d7b66e;
+  transform: translateY(-3px);
+}
+
+/* App link */
+
+.footer-app-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: fit-content;
+  max-width: 100%;
+  padding: 12px 15px;
+  border: 1px solid rgba(215,182,110,0.5);
+  border-radius: 7px;
+  color: #ffffff;
+  font-size: 13px;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.footer-app-link i:first-child {
+  color: #d7b66e;
+  font-size: 19px;
+}
+
+.footer-app-link i:last-child {
+  font-size: 11px;
+}
+
+.footer-app-link:hover {
+  background: #d7b66e;
+  color: #142a4a;
+  border-color: #d7b66e;
+}
+
+.footer-app-link:hover i {
+  color: #142a4a;
+}
+
+/* Enquiry link */
+
+.footer-enquiry-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 19px;
+  color: #d7b66e;
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: gap 0.25s ease;
+}
+
+.footer-enquiry-link:hover {
+  gap: 13px;
+}
+
+/* Bottom footer */
+
+.footer-bottom {
+  padding: 1.2rem 0;
+  color: #aeb9c8;
+  font-size: .72rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px 25px;
+  padding-top: 22px;
+  padding-bottom: 22px;
+  border-top: 1px solid rgba(255,255,255,0.13);
+}
+
+.footer-bottom p {
+  margin: 0;
+  color: rgba(255,255,255,0.62);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.footer-bottom .back-top {
+  color: #d7b66e;
+  font-size: 12.5px;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.footer-bottom .back-top:hover {
+  color: #ffffff;
+}
+
+/* =========================================
+   TABLET RESPONSIVENESS
+========================================= */
+
+@media (max-width: 1000px) {
+  .sace-footer-main {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px;
+    padding-top: 50px;
+    padding-bottom: 45px;
+  }
+}
+
+/* =========================================
+   MOBILE RESPONSIVENESS
+========================================= */
+
+@media (max-width: 600px) {
+  .sace-footer-main {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    padding-top: 42px;
+    padding-bottom: 38px;
+  }
+
+  .footer-brand-logo {
+    width: 215px;
+  }
+
+  .sace-footer-heading {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
+  .footer-about-text,
+  .footer-connect-text {
+    max-width: 420px;
+  }
+
+  .footer-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 9px;
+    padding-top: 19px;
+    padding-bottom: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-footer *,
+  .site-footer *::before,
+  .site-footer *::after {
+    transition: none !important;
+    transform: none !important;
+  }
+}
