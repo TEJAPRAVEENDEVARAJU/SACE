@@ -7,7 +7,10 @@
 
   <!-- Primary SEO -->
   <title>SACE Academy Faculty in Guntur | Meet Our Teachers</title>
-
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+/>
   <meta
     name="description"
     content="Meet the faculty at Sandhya Academy of Competitive Exams (SACE), Guntur. Explore faculty profiles, teaching subjects and contact the academy for current batch details."
@@ -70,9 +73,7 @@
     content="https://saceacademy.netlify.app/assets/banner.png"
   >
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/assets/Icon.png">
-
+ <link rel="icon" type="image/png" href="assets/Icon.png">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -180,37 +181,44 @@
   
 <!-- HEADER -->
   <header class="site-header">
-    <div class="container nav-wrap">
+  <div class="container nav-wrap">
 
-      <a class="brand" href="index.html" aria-label="SACE Guntur home">
-        <span class="brand-mark" aria-hidden="true">
-        <img
-          src="assets/Icon.png"
-          alt="SACE Guntur Logo"
-          style="max-width: 270px; width: 100%; height: auto;"
-        >
-      </span>
-      <span class="brand-copy">
-         <strong>SACE <span>GUNTUR</span></strong>
-        <small>Sandhya Academy of Competitive Exams</small>
-      </span>
+    <a class="brand" href="index.html" aria-label="SACE home">
+      <img
+        src="assets/SACE.png"
+        alt="SACE - Sandhya Academy of Competitive Exams"
+        class="brand-logo"
+      />
+    </a>
+
+    <button
+      class="menu-toggle"
+      id="menu-toggle"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      aria-label="Open navigation"
+    >
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+      <a href="index.html#home">Home</a>
+       <a href="index.html#about">About</a>
+      <a href="courses.html">Courses</a>
+      <a href="index.html#faculty">Faculty</a>
+     
+      <a href="index.html#google-reviews">Student reviews</a>
+      <a href="achievers.html">Achievers & Student Testimonials</a>
+      <a class="nav-cta" href="index.html#contact">
+        Enquire Now <span aria-hidden="true">↗</span>
       </a>
+    </nav>
 
-      <button class="menu-toggle" id="menu-toggle"
-        type="button"
-        aria-expanded="false"
-        aria-controls="site-nav"
-        aria-label="Open navigation">
-        <span></span><span></span><span></span>
-      </button>
-  <nav class="site-nav" id="site-nav" aria-label="Main navigation">
-        <a href="index.html#home">Home</a><a href="courses.html">Courses</a><a href="faculty.html">Faculty</a><a
-          href="index.html#about">About</a> <a href="index.html#google-reviews">Student reviews</a> <a href="achievers.html">Achievers & Student Testimonials</a>
-        <a class="nav-cta" href="index.html#contact">Enquire Now <span aria-hidden="true">↗</span></a>
-      </nav>
-
-    </div>
-  </header>
+  </div>
+</header>
 
   <main id="main">
     <section class="faculty-hero">
@@ -228,7 +236,7 @@
             <p class="faculty-kicker" style="color:#a77d32">OUR FACULTY</p>
             <h2>Guidance built on <em>strong concepts.</em></h2>
           </div>
-          <p class="faculty-directory-note">Faculty profiles are presented in a simple card layout so visitors can scan the full team in one place. More profiles can be added without changing the layout.</p>
+          <!-- <p class="faculty-directory-note">Faculty profiles are presented in a simple card layout so visitors can scan the full team in one place. More profiles can be added without changing the layout.</p> -->
         </div>
 
         <div class="faculty-card-grid">
@@ -241,7 +249,9 @@
               <p class="faculty-card-label">GATE FACULTY</p>
               <h3>Ramarao Bandlamudi</h3>
               <p class="faculty-card-role">Senior GATE Faculty · ECE &amp; EEE</p>
-              <p class="faculty-card-description">Senior GATE faculty profile listed on the SACE homepage, with ECE and EEE as the stated specializations.</p>
+              <!-- <p >Senior GATE faculty profile listed on the SACE homepage, with ECE and EEE as the stated specializations.</p> -->
+                          <p class="faculty-card-description">Welcome! I am  a Senior GATE Faculty for ECE & EEE, I specialize in breaking down core, highly abstract engineering concepts into clear, high-scoring exam insights.</p>
+
               <div class="faculty-card-footer"><span>ECE · EEE</span><a href="index.html#contact">Enquire ↗</a></div>
             </div>
           </article>
@@ -284,29 +294,189 @@
     </section>
   </main>
 
-  <footer class="site-footer">
-    <div class="container footer-top">
-      <!-- <a class="brand footer-brand" href="index.html"><span class="brand-mark">S</span><span class="brand-copy"><strong>SACE <span>GUNTUR</span></strong><small>Sandhya Academy of Competitive Exams</small></span></a> -->
-       <a class="brand footer-brand" href="index.html">
-         <span class="brand-mark">
-        <img
-          src="assets/Icon.png"
-          alt="SACE Guntur Logo"
-          style="width: 42px; height: 42px; object-fit: contain;"
-        >
-      </span>
+  
+<footer class="site-footer">
 
-      <span class="brand-copy">
-        <strong>SACE <span>GUNTUR</span></strong>
-        <small>Sandhya Academy of Competitive Exams</small>
-      </span>
+  <div class="container sace-footer-main">
+
+    <!-- COLUMN 1: BRAND / ABOUT -->
+    <div class="sace-footer-column footer-about">
+
+      <a class="footer-brand" href="index.html" aria-label="SACE home">
+        <img
+          src="assets/SACE.webp"
+          alt="SACE - Sandhya Academy of Competitive Exams"
+          class="footer-brand-logo"
+          loading="lazy"
+        />
       </a>
-      <a class="back-top" href="#">Back to top ↑</a>
+
+      <p class="footer-about-text">
+        Sandhya Academy of Competitive Exams (SACE), Guntur,
+        provides guidance and preparation support for students
+        pursuing competitive examinations and academic goals.
+      </p>
+
+      <div class="footer-social-links">
+        <a href="https://www.instagram.com/sace_guntur_official/"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="SACE Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://www.youtube.com/@SACEGunturOfficial"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="SACE YouTube">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+
+        <a href="https://play.google.com/store/apps/details?id=co.griffin.pnxfw&hl=en_IN"
+           target="_blank" rel="noopener noreferrer"
+           aria-label="SACE Google Play App">
+          <i class="fa-brands fa-google-play"></i>
+        </a>
+      </div>
+
     </div>
-    <div class="container footer-bottom">
-      <p>© <span id="year"></span> SACE Guntur. All rights reserved.</p>
-      <p>Course details and faculty availability are subject to confirmation by the academy.</p>
+
+
+    <!-- COLUMN 2: QUICK LINKS -->
+    <div class="sace-footer-column">
+
+      <h3 class="sace-footer-heading">Quick Links</h3>
+
+      <ul class="sace-footer-links">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="courses.html">Our Courses</a></li>
+        <li><a href="faculty.html">Our Faculty</a></li>
+        <li><a href="achievers.html">Achievers</a></li>
+        <li><a href="index.html#contact">Enquiry</a></li>
+      </ul>
+
     </div>
-  </footer>
+
+
+    <!-- COLUMN 3: CONTACT DETAILS -->
+    <div class="sace-footer-column">
+
+      <h3 class="sace-footer-heading">Contact Us</h3>
+
+      <ul class="sace-footer-contact">
+
+        <li>
+          <i class="fa-solid fa-location-dot"></i>
+          <a
+            href="https://www.google.com/maps/search/?api=1&query=SACE+Coaching+Centre+Brodipet+Guntur+Andhra+Pradesh+522002"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            6th Line, Main Road, Brodipet, beside Arundelpet Police
+            Station, above Paramount Studio, Guntur,
+            Andhra Pradesh – 522002.
+          </a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+918143767679">+91 81437 67679</a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:+918121595953">+91 81215 95953</a>
+        </li>
+
+        <li>
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:saceguntur@gmail.com">
+            saceguntur@gmail.com
+          </a>
+        </li>
+
+      </ul>
+
+    </div>
+
+
+    <!-- COLUMN 4: CONNECT -->
+    <div class="sace-footer-column">
+
+      <h3 class="sace-footer-heading">Connect With Us</h3>
+
+      <p class="footer-connect-text">
+        Stay connected with SACE for academy updates,
+        announcements and student achievements.
+      </p>
+
+      <a
+        class="footer-app-link"
+        href="https://play.google.com/store/apps/details?id=co.griffin.pnxfw&hl=en_IN"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-brands fa-google-play"></i>
+        <span>Download Our App</span>
+        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+      </a>
+
+      <a class="footer-enquiry-link" href="index.html#contact">
+        Send an Enquiry <span>↗</span>
+      </a>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER BOTTOM -->
+  <div class="container footer-bottom">
+
+    <p>
+      © <span id="year"></span> SACE Guntur. All rights reserved.
+    </p>
+
+    <p>
+      Course details and admissions are subject to confirmation
+      by the academy.
+    </p>
+
+    <a class="back-top" href="#home">
+      Back to top ↑
+    </a>
+
+  </div>
+
+</footer>
+
+<!-- SACE Social Media Sidebar -->
+
+<div class="sace-social-sidebar">
+  <a href="https://www.instagram.com/sace_guntur_official/"
+     target="_blank" rel="noopener noreferrer"
+     class="social-icon instagram"
+     aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+    <span>Instagram</span>
+  </a>
+
+  <a href="https://www.youtube.com/@SACEGunturOfficial"
+     target="_blank" rel="noopener noreferrer"
+     class="social-icon youtube"
+     aria-label="YouTube">
+    <i class="fa-brands fa-youtube"></i>
+    <span>YouTube</span>
+  </a>
+
+  <a href="https://play.google.com/store/apps/details?id=co.griffin.pnxfw&hl=en_IN"
+     target="_blank" rel="noopener noreferrer"
+     class="social-icon app"
+     aria-label="Download App">
+    <i class="fa-brands fa-google-play"></i>
+    <span>Download <br>Learning App</span>
+  </a>
+</div>
+
+  
 </body>
 </html>
